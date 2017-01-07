@@ -1,0 +1,11 @@
+.f.slp {
+    visibility: hidden;
+}
+.settings-loaded .f.slp {
+    visibility: visible;
+}
+
+.hide-imdb-ratings .imdb-search-item .f.slp,
+.hide-goodreads-ratings .goodreads-search-item .f.slp {
+    display: none !important;
+}

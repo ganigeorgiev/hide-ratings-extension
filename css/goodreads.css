@@ -1,0 +1,8 @@
+html:not(.show-ratings) #bookMeta,
+html:not(.show-ratings) .staticStars,
+html:not(.show-ratings) .minirating {
+    /* enable if `display: none` breaks the layout */
+    /*visibility: hidden !important;*/
+
+    display: none !important;
+}

@@ -1,0 +1,12 @@
+html:not(.show-ratings) .ratings-bar,
+html:not(.show-ratings) .ratings_wrapper,
+html:not(.show-ratings) .titleReviewBar,
+html:not(.show-ratings) .rating,
+html:not(.show-ratings) .rating-list,
+html:not(.show-ratings) .tinystarbar,
+html:not(.show-ratings) .imdbRatingPlugin {
+    /* enable if `display: none` breaks the layout */
+    /*visibility: hidden !important;*/
+
+    display: none !important;
+}
