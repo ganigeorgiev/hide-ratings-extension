@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Hide ratings (IMDB, Goodreads)",
-    "description": "Simple extension that will prevent you from other people influence by hiding the rating bars from IMDB and Goodreads lists and reviews.",
+    "description": "Simple extension that will prevent you from other people influence by hiding the rating bars from IMDB and Goodreads search results, lists and reviews.",
     "version": "1.0",
     "browser_action": {
         "default_icon": "images/icon64.png",
