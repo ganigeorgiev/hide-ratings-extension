@@ -4,7 +4,7 @@ Simple extension that will prevent you from other people influence by hiding the
 
 #### Installation
 
-- Via [Chrome Web Store](https://chrome.google.com/webstore/category/extensions)
+- Via [Chrome Web Store](https://chrome.google.com/webstore/detail/hide-ratings-imdb-goodrea/cnjhjnjbpedipoamajojlbfakbadgiam?hl=en-US&gl=BG&authuser=1)
 
 - Manually:
   1. Download and extract the project archive.
