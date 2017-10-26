@@ -1,10 +1,12 @@
-## Hide ratings (Chrome/WebKit extension)
+Hide ratings
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/stars/cnjhjnjbpedipoamajojlbfakbadgiam.svg)](https://chrome.google.com/webstore/detail/hide-ratings-imdb-goodrea/cnjhjnjbpedipoamajojlbfakbadgiam)
+======================================================================
 
 Simple extension that will prevent you from other people influence by hiding the rating bars from **IMDB** and **Goodreads** search results, lists and reviews.
 
 #### Installation
 
-- Via [Chrome Web Store](https://chrome.google.com/webstore/detail/hide-ratings-imdb-goodrea/cnjhjnjbpedipoamajojlbfakbadgiam?hl=en-US&gl=BG&authuser=1)
+- Via [Chrome Web Store](https://chrome.google.com/webstore/detail/hide-ratings-imdb-goodrea/cnjhjnjbpedipoamajojlbfakbadgiam)
 
 - Manually:
   1. Download and extract the project archive.
