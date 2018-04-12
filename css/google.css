@@ -1,11 +1,15 @@
-.f.slp {
+.f.slp,
+.yQ8hqd.ksSzJd.w6Utff {
     visibility: hidden;
 }
-.settings-loaded .f.slp {
+.settings-loaded .f.slp,
+.settings-loaded .yQ8hqd.ksSzJd.w6Utff {
     visibility: visible;
 }
 
+.hide-imdb-ratings .yQ8hqd.ksSzJd.w6Utff,
 .hide-imdb-ratings .imdb-search-item .f.slp,
+.hide-mal-ratings .mal-search-item .f.slp,
 .hide-goodreads-ratings .goodreads-search-item .f.slp {
     display: none !important;
 }

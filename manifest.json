@@ -209,6 +209,11 @@
             "css": ["css/imdb.css"]
         },
         {
+            "matches": ["*://*.myanimelist.net/*"],
+            "js": ["js/common.js", "js/mal.js"],
+            "css": ["css/mal.css"]
+        },
+        {
             "matches": ["*://*.goodreads.com/*"],
             "js": ["js/common.js", "js/goodreads.js"],
             "css": ["css/goodreads.css"]
@@ -407,6 +412,7 @@
         "*://www.google.co.zm/search*",
         "*://www.google.co.zw/search*",
         "*://*.imdb.com/",
-        "*://*.goodreads.com/"
+        "*://*.goodreads.com/",
+        "*://*.myanimelist.net/"
     ]
 }

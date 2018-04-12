@@ -1,7 +1,9 @@
 /**
- * JS file that is intended to be used from both IMDB and Goodreads sites
+ * ===================================================================
+ * JS file that is intended to be used by all rating sites.
  *
  * @author Gani Georgiev <gani.georgiev@gmail.com>
+ * ===================================================================
  */
 
 function showRatings(value, className) {

@@ -68,9 +68,14 @@ body {
     min-width: 300px;
     color: #808080;
     font-size: 14px;
-    line-height: 26px;
+    line-height: 22px;
     padding: 20px;
     font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+}
+small {
+    font-size: 10px;
+    line-height: 12px;
+    font-style: italic;
 }
 .wrapper {
     position: relative;
@@ -101,7 +106,7 @@ body {
     text-align: center;
 }
 .alert.success {
-    background: #49d46e;
+    background: #398ff7;
 }
 .alert.danger {
     background: #fb4f57;
@@ -112,14 +117,14 @@ body {
     position: relative;
     display: inline-block;
     vertical-align: top;
-    width: 65px;
-    height: 30px;
+    width: 52px;
+    height: 26px;
     background: #f8f8f8;
-    border-radius: 30px;
+    border-radius: 26px;
     cursor: pointer;
     user-select: none;
     transition: all 0.3s;
-    border: 1px solid #ddd;
+    border: 1px solid #ededed;
     box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0);
 }
 .toggle:after {
@@ -128,23 +133,23 @@ body {
     position: absolute;
     left: 1px;
     top: 1px;
-    width: 26px;
-    height: 26px;
+    width: 22px;
+    height: 22px;
     background: #ccc;
     border-radius: 50%;
     transition: all 0.3s;
 }
 /* hover state */
 .toggle:hover {
-    box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.07);
 }
 /* active state */
 .toggle.active {
-    background: #e2ffea;
+    background: #e2f3ff;
 }
 .toggle.active:after {
-    left: calc(100% - 27px);
-    background: #49d46e;
+    left: calc(100% - 23px);
+    background: #398ff7;
 }
 
 /* ---- Toggle items wrapper ---- */
@@ -154,12 +159,16 @@ body {
     display: block;
     width: 100%;
     clear: both;
-    min-height: 30px;
-    line-height: 30px;
+    min-height: 26px;
+    line-height: 26px;
 }
 .toggle-item {
     padding-right: 65px;
     margin-bottom: 20px;
+}
+.toggle-item small {
+    display: block;
+    margin-top: -5px;
 }
 .toggle-item .toggle {
     position: absolute;

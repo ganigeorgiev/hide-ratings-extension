@@ -1,76 +1,104 @@
-var statusTimeout = null;
+;(function () {
+    var statusVisibilityTimeout = null;
 
-// Saves toggle values in chrome.storage
-function saveToggleValues() {
-    var imdb      = !document.getElementById('imdb_toggle').classList.contains('active');
-    var goodreads = !document.getElementById('goodreads_toggle').classList.contains('active');
+    var defaultValues = {
+        imdb:      false,
+        mal:       false,
+        goodreads: false
+    };
 
-    chrome.storage.sync.set({
-        imdb:      imdb,
-        goodreads: goodreads
-    }, function() {
-        chrome.tabs.getSelected(function(tab) {
-            if (tab && tab.url) {
-                if (tab.url.indexOf('.imdb.com') >= 0 ||      // IMDB page
-                    tab.url.indexOf('.goodreads.com') >= 0 || // Goodreads
-                    tab.url.indexOf('www.google.') >= 0       // Google search results
-                ) {
-                    chrome.tabs.sendMessage(tab.id, {'imdb': imdb, 'goodreads': goodreads});
+    // Checks if chrome storage is defined
+    function hasChromeStorage() {
+        return (
+            typeof chrome !== 'undefined' &&
+            typeof chrome.storage !== 'undefined' &&
+            typeof chrome.storage.sync !== 'undefined'
+        );
+    }
+
+    // Saves toggle values in chrome.storage
+    function saveToggleValues() {
+        var imdb      = !document.getElementById('imdb_toggle').classList.contains('active');
+        var mal       = !document.getElementById('mal_toggle').classList.contains('active');
+        var goodreads = !document.getElementById('goodreads_toggle').classList.contains('active');
+
+        if (!hasChromeStorage()) {
+            console.warn('Chrome storage is not available.')
+            return;
+        }
+
+        chrome.storage.sync.set({
+            imdb:      imdb,
+            mal:       mal,
+            goodreads: goodreads
+        }, function () {
+            chrome.tabs.getSelected(function (tab) {
+                if (tab && tab.url) {
+                    chrome.tabs.sendMessage(tab.id, {'imdb': imdb, 'mal': mal, 'goodreads': goodreads});
+                }
+            });
+
+            // show status box
+            var statusBox = document.getElementById('status_box');
+            statusBox.classList.remove('hidden');
+            if (statusVisibilityTimeout) {
+                clearTimeout(statusVisibilityTimeout);
+            }
+            statusVisibilityTimeout = setTimeout(function () {
+                statusBox.classList.add('hidden');
+            }, 1000);
+        });
+    }
+
+    // Restores toggle values from chrome.storage
+    function restoreToggleValues() {
+        var keys = ['imdb', 'mal', 'goodreads'];
+
+        if (!hasChromeStorage()) {
+            console.warn('Chrome storage is not available.')
+            return;
+        }
+
+        chrome.storage.sync.get(keys, function (items) {
+            var values = Object.assign({}, defaultValues, items);
+
+            for (let i in keys) {
+                let key = keys[i];
+
+                if (values[key] === true) {
+                    document.getElementById(key + '_toggle').classList.remove('active');
+                } else {
+                    document.getElementById(key + '_toggle').classList.add('active');
                 }
             }
         });
-
-        // show status box
-        var statusBox = document.getElementById('status_box');
-        statusBox.classList.remove('hidden');
-        if (statusTimeout) {
-            clearTimeout(statusTimeout);
-        }
-        statusTimeout = setTimeout(function() {
-            statusBox.classList.add('hidden');
-        }, 1000);
-    });
-}
-
-// Restores toggle values from chrome.storage
-function restoreToggleValues() {
-    chrome.storage.sync.get({
-        imdb: false,
-        goodreads: false
-    }, function(items) {
-        if (items.imdb === true) {
-            document.getElementById('imdb_toggle').classList.remove('active');
-        } else {
-            document.getElementById('imdb_toggle').classList.add('active');
-        }
-
-        if (items.goodreads === true) {
-            document.getElementById('goodreads_toggle').classList.remove('active');
-        } else {
-            document.getElementById('goodreads_toggle').classList.add('active');
-        }
-    });
-}
-
-// Switch on/off single toggle item
-function toggle(el) {
-    if (el.classList.contains('active')) {
-        el.classList.remove('active');
-    } else {
-        el.classList.add('active');
     }
 
-    saveToggleValues();
-}
+    // Switch on/off single toggle item
+    function toggle(el) {
+        if (el.classList.contains('active')) {
+            el.classList.remove('active');
+        } else {
+            el.classList.add('active');
+        }
 
-document.getElementById('goodreads_toggle').addEventListener('click', function(e) {
-    e.preventDefault();
-    toggle(this);
- }, false);
+        saveToggleValues();
+    }
 
-document.getElementById('imdb_toggle').addEventListener('click', function(e) {
-    e.preventDefault();
-    toggle(this);
- }, false);
+    document.getElementById('goodreads_toggle').addEventListener('click', function (e) {
+        e.preventDefault();
+        toggle(this);
+     }, false);
 
-document.addEventListener('DOMContentLoaded', restoreToggleValues);
+    document.getElementById('imdb_toggle').addEventListener('click', function (e) {
+        e.preventDefault();
+        toggle(this);
+     }, false);
+
+    document.getElementById('mal_toggle').addEventListener('click', function (e) {
+        e.preventDefault();
+        toggle(this);
+     }, false);
+
+    document.addEventListener('DOMContentLoaded', restoreToggleValues);
+})();

@@ -1,7 +1,9 @@
 /**
+ * ===================================================================
  * JS file that is intented to be used only in Goodreads.
  *
  * @author Gani Georgiev <gani.georgiev@gmail.com>
+ * ===================================================================
  */
 
 // Check initial state from chrome.storage

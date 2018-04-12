@@ -5,8 +5,8 @@ html:not(.show-ratings) .rating,
 html:not(.show-ratings) .rating-list,
 html:not(.show-ratings) .tinystarbar,
 html:not(.show-ratings) .imdbRatingPlugin {
-    /* enable if `display: none` breaks the layout */
-    /*visibility: hidden !important;*/
-
     display: none !important;
+}
+html:not(.show-ratings) .ratingColumn {
+    visibility: hidden !important;
 }
