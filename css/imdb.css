@@ -4,6 +4,9 @@ html:not(.show-ratings) .titleReviewBar,
 html:not(.show-ratings) .rating,
 html:not(.show-ratings) .rating-list,
 html:not(.show-ratings) .tinystarbar,
+html:not(.show-ratings) .ipl-rating-widget,
+html:not(.show-ratings) .ratings-metascore,
+html:not(.show-ratings) .rating_txt,
 html:not(.show-ratings) .imdbRatingPlugin {
     display: none !important;
 }

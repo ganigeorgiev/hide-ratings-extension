@@ -8,6 +8,8 @@ html:not(.show-ratings) .anime-detail-header-stats .stats-block .information-blo
 }
 html:not(.show-ratings) .mal-ratings-wrapper,
 html:not(.show-ratings) #myinfo_score,
+html:not(.show-ratings) td .js-top-ranking-score-col,
+html:not(.show-ratings) .information .scormem,
 html:not(.show-ratings) .anime-detail-header-stats .stats-block:before,
 html:not(.show-ratings) .anime-detail-header-stats .stats-block .di-ib.ml12.pl20.pt8,
 html:not(.show-ratings) .anime-detail-header-stats .stats-block .score {

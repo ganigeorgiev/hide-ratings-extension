@@ -15,7 +15,7 @@ var malItemClass       = 'mal-search-item';
 
 // Load initial ratings visibility state from chrome.storage
 chrome.storage.sync.get(['imdb', 'mal', 'goodreads'], function (items) {
-    var urls      = document.querySelectorAll('#search .g h3 + div > div:first-child > div:first-child');
+    var urls      = document.querySelectorAll('#search .g h3 ~ div cite');
     var totalUrls = urls.length;
 
     var parent = null;
@@ -55,4 +55,5 @@ chrome.storage.sync.get(['imdb', 'mal', 'goodreads'], function (items) {
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     showRatings(!msg.imdb, imdbHideClass);
     showRatings(!msg.goodreads, goodreadsHideClass);
+    showRatings(!msg.mal, malHideClass);
 });
