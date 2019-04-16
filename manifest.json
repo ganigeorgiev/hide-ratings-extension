@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Hide ratings (IMDB, Goodreads, MyAnimeList)",
     "description": "Simple extension that will prevent you from other people influence by hiding the rating bars from IMDB, Goodreads and MyAnimeList.",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "browser_action": {
         "default_icon": "images/icon64.png",
         "default_popup": "options.html"
