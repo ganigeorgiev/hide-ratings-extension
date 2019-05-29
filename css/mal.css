@@ -6,6 +6,18 @@ html:not(.show-ratings) .anime-detail-header-stats .stats-block .information-blo
     left: auto !important;
     top: auto !important;
 }
+html:not(.show-ratings) [onclick*="#score"]:after {
+    content: "";
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    vertical-align: top;
+    width: 20px;
+    height: 20px;
+    margin-right: -20px;
+    background: #fff;
+}
+html:not(.show-ratings) [itemprop="aggregateRating"],
 html:not(.show-ratings) .mal-ratings-wrapper,
 html:not(.show-ratings) #myinfo_score,
 html:not(.show-ratings) td .js-top-ranking-score-col,
