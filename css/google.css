@@ -10,6 +10,7 @@
 .hide-imdb-ratings .yQ8hqd.ksSzJd.w6Utff,
 .hide-imdb-ratings .imdb-search-item .f.slp,
 .hide-mal-ratings .mal-search-item .f.slp,
-.hide-goodreads-ratings .goodreads-search-item .f.slp {
+.hide-goodreads-ratings .goodreads-search-item .f.slp,
+.hide-goodreads-ratings .xpdopen .LoQAYe {
     display: none !important;
 }
