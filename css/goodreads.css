@@ -4,6 +4,10 @@ html:not(.show-ratings) #reviews #reviewControls .reviewControls__ratingDetails,
 html:not(.show-ratings) [onclick*="score_explanation"],
 html:not(.show-ratings) [onclick*="score_explanation"] + .greyText,
 html:not(.show-ratings) .staticStars,
+html:not(.show-ratings) .communityRating,
+html:not(.show-ratings) .avg_rating,
+html:not(.show-ratings) th.rating,
+html:not(.show-ratings) td.rating,
 html:not(.show-ratings) .minirating {
     /* enable if `display: none` breaks the layout */
     /*visibility: hidden !important;*/
