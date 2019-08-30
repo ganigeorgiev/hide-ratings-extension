@@ -7,7 +7,7 @@
  */
 
 // Check initial state from chrome.storage
-chrome.storage.sync.get(['letterboxd'], function(items) {
+chrome.storage.sync.get(['letterboxd'], function (items) {
     showRatings(items.letterboxd);
 });
 

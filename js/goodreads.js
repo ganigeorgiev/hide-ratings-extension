@@ -9,7 +9,7 @@
 // Check initial state from chrome.storage
 chrome.storage.sync.get({
     goodreads: false,
-}, function(items) {
+}, function (items) {
     showRatings(items.goodreads);
 });
 

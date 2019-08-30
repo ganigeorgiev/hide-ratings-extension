@@ -7,7 +7,7 @@
  */
 
 // Check initial state from chrome.storage
-chrome.storage.sync.get(['mal'], function(items) {
+chrome.storage.sync.get(['mal'], function (items) {
     showRatings(items.mal);
 });
 
