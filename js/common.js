@@ -15,4 +15,3 @@ function showRatings(value, className) {
         document.querySelector('html').classList.remove(className);
     }
 }
-

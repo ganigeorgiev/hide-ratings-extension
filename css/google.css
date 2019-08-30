@@ -7,10 +7,11 @@
     visibility: visible;
 }
 
-.hide-imdb-ratings .yQ8hqd.ksSzJd.w6Utff,
-.hide-imdb-ratings .imdb-search-item .f.slp,
-.hide-mal-ratings .mal-search-item .f.slp,
-.hide-goodreads-ratings .goodreads-search-item .f.slp,
-.hide-goodreads-ratings .xpdopen .LoQAYe {
+.imdb-hide-ratings .yQ8hqd.ksSzJd.w6Utff,
+.imdb-hide-ratings .imdb-search-item .f.slp,
+.mal-hide-ratings .mal-search-item .f.slp,
+.letterboxd-hide-ratings .letterboxd-search-item .f.slp,
+.goodreads-hide-ratings .goodreads-search-item .f.slp,
+.goodreads-hide-ratings .xpdopen .LoQAYe {
     display: none !important;
 }
