@@ -1,13 +1,33 @@
 .f.slp,
-.yQ8hqd.ksSzJd.w6Utff {
+.yQ8hqd.ksSzJd.w6Utff,
+.dhIWPd {
     visibility: hidden;
 }
 .settings-loaded .f.slp,
-.settings-loaded .yQ8hqd.ksSzJd.w6Utff {
+.settings-loaded .yQ8hqd.ksSzJd.w6Utff,
+.settings-loaded .dhIWPd {
     visibility: visible;
 }
 
-.imdb-hide-ratings .yQ8hqd.ksSzJd.w6Utff,
+/* blur all rating elements for the cases when the rating source can't be identified */
+g-review-stars,
+[data-attrid="kc:/ugc:user_reviews"],
+[data-attrid="kc:/film/film:reviews"],
+[data-attrid="kc:/book/book:reviews"] {
+    filter: blur(15px);
+    transition: filter 0.2s;
+}
+g-review-stars:hover,
+[data-attrid="kc:/ugc:user_reviews"]:hover,
+[data-attrid="kc:/film/film:reviews"]:hover,
+[data-attrid="kc:/book/book:reviews"]:hover {
+    filter: blur(0);
+}
+
+.imdb-hide-ratings .imdb-search-item .dhIWPd,
+.mal-hide-ratings .mal-search-item .dhIWPd,
+.letterboxd-hide-ratings .letterboxd-search-item .dhIWPd,
+.goodreads-hide-ratings .goodreads-search-item .dhIWPd,
 .imdb-hide-ratings .imdb-search-item .f.slp,
 .mal-hide-ratings .mal-search-item .f.slp,
 .letterboxd-hide-ratings .letterboxd-search-item .f.slp,
