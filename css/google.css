@@ -13,14 +13,16 @@
 g-review-stars,
 [data-attrid="kc:/ugc:user_reviews"],
 [data-attrid="kc:/film/film:reviews"],
-[data-attrid="kc:/book/book:reviews"] {
+[data-attrid="kc:/book/book:reviews"],
+[data-attrid="kc:/tv/tv_program:reviews"] {
     filter: blur(15px);
     transition: filter 0.2s;
 }
 g-review-stars:hover,
 [data-attrid="kc:/ugc:user_reviews"]:hover,
 [data-attrid="kc:/film/film:reviews"]:hover,
-[data-attrid="kc:/book/book:reviews"]:hover {
+[data-attrid="kc:/book/book:reviews"]:hover,
+[data-attrid="kc:/tv/tv_program:reviews"]:hover {
     filter: blur(0);
 }
 
