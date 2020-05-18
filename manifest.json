@@ -231,8 +231,7 @@
         }
     ],
     "permissions": [
-        "storage",
-        "activeTab"
+        "storage"
     ],
     "optional_permissions": [
         "*://www.google.com/search*",
