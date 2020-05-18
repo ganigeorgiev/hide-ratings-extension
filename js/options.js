@@ -31,8 +31,8 @@
         }
 
         chrome.storage.sync.set(data, function () {
-            chrome.tabs.getSelected(function (tab) {
-                if (tab && tab.url) {
+            chrome.tabs.query({}, function (tabs) {
+                for (let tab of tabs) {
                     chrome.tabs.sendMessage(tab.id, data);
                 }
             });
@@ -61,25 +61,15 @@
         chrome.storage.sync.get(keys, function (items) {
             var values = Object.assign({}, sourcesDefault, items);
 
-            for (let i in keys) {
-                let key = keys[i];
-
-                if (values[key] === true) {
-                    document.getElementById(key + '_toggle').classList.remove('active');
-                } else {
-                    document.getElementById(key + '_toggle').classList.add('active');
-                }
+            for (let key of keys) {
+                document.getElementById(key + '_toggle').classList.toggle('active', !values[key]);
             }
         });
     }
 
     // Switch on/off single toggle item
     function toggle(el) {
-        if (el.classList.contains('active')) {
-            el.classList.remove('active');
-        } else {
-            el.classList.add('active');
-        }
+        el.classList.toggle('active');
 
         saveToggleValues();
     }
