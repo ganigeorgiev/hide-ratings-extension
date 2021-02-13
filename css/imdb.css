@@ -10,7 +10,10 @@ html:not(.show-ratings) .rating_txt,
 html:not(.show-ratings) .rating-other-user-rating,
 html:not(.show-ratings) .imdbRatingPlugin,
 html:not(.show-ratings) .ipc-rating-star--imdb,
-html:not(.show-ratings) .ipc-poster-card__rating-star-group {
+html:not(.show-ratings) .ipc-poster-card__rating-star-group,
+html:not(.show-ratings) .ipc-rating-star,
+html:not(.show-ratings) [class*="TitleBlock__RatingContainer"],
+html:not(.show-ratings) [data-testid="reviewContent-all-reviews"] {
     display: none !important;
 }
 html:not(.show-ratings) .ratingColumn {

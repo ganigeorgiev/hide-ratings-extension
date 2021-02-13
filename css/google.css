@@ -11,6 +11,7 @@
 
 /* blur all rating elements for the cases when the rating source can't be identified */
 g-review-stars,
+g-review-stars ~ span,
 [data-attrid="kc:/ugc:user_reviews"],
 [data-attrid="kc:/film/film:reviews"],
 [data-attrid="kc:/book/book:reviews"],
@@ -19,6 +20,7 @@ g-review-stars,
     transition: filter 0.2s;
 }
 g-review-stars:hover,
+g-review-stars:hover ~ span,
 [data-attrid="kc:/ugc:user_reviews"]:hover,
 [data-attrid="kc:/film/film:reviews"]:hover,
 [data-attrid="kc:/book/book:reviews"]:hover,
