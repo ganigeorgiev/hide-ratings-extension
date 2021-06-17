@@ -13,6 +13,7 @@ html:not(.show-ratings) .ipc-rating-star--imdb,
 html:not(.show-ratings) .ipc-poster-card__rating-star-group,
 html:not(.show-ratings) .ipc-rating-star,
 html:not(.show-ratings) [class*="TitleBlock__RatingContainer"],
+html:not(.show-ratings) [class*="RatingBar__RatingContainer"],
 html:not(.show-ratings) [data-testid="reviewContent-all-reviews"] {
     display: none !important;
 }
