@@ -1,30 +1,31 @@
+g-review-stars,
 .f.slp,
 .yQ8hqd.ksSzJd.w6Utff,
 .dhIWPd {
     visibility: hidden;
 }
+.settings-loaded g-review-stars,
 .settings-loaded .f.slp,
 .settings-loaded .yQ8hqd.ksSzJd.w6Utff,
 .settings-loaded .dhIWPd {
     visibility: visible;
 }
 
-/* blur all rating elements for the cases when the rating source can't be identified */
-g-review-stars,
-g-review-stars ~ span,
-[data-attrid="kc:/ugc:user_reviews"],
-[data-attrid="kc:/film/film:reviews"],
-[data-attrid="kc:/book/book:reviews"],
-[data-attrid="kc:/tv/tv_program:reviews"] {
+.blur-ratings g-review-stars,
+.blur-ratings g-review-stars ~ span,
+.blur-ratings [data-attrid="kc:/ugc:user_reviews"],
+.blur-ratings [data-attrid="kc:/film/film:reviews"],
+.blur-ratings [data-attrid="kc:/book/book:reviews"],
+.blur-ratings [data-attrid="kc:/tv/tv_program:reviews"] {
     filter: blur(15px);
     transition: filter 0.2s;
 }
-g-review-stars:hover,
-g-review-stars:hover ~ span,
-[data-attrid="kc:/ugc:user_reviews"]:hover,
-[data-attrid="kc:/film/film:reviews"]:hover,
-[data-attrid="kc:/book/book:reviews"]:hover,
-[data-attrid="kc:/tv/tv_program:reviews"]:hover {
+.blur-ratings g-review-stars:hover,
+.blur-ratings g-review-stars:hover ~ span,
+.blur-ratings [data-attrid="kc:/ugc:user_reviews"]:hover,
+.blur-ratings [data-attrid="kc:/film/film:reviews"]:hover,
+.blur-ratings [data-attrid="kc:/book/book:reviews"]:hover,
+.blur-ratings [data-attrid="kc:/tv/tv_program:reviews"]:hover {
     filter: blur(0);
 }
 

@@ -14,10 +14,13 @@ var sourceIdentifiers = {
 };
 
 // Load initial ratings visibility state from chrome.storage
-chrome.storage.sync.get(Object.keys(sourceIdentifiers), function (items) {
+chrome.storage.sync.get(Object.keys(sourceIdentifiers).concat('google'), function (items) {
     var urls      = document.querySelectorAll('#search .g h3 ~ div cite');
     var totalUrls = urls.length;
     var parent    = null;
+
+    // check global search page ratings blur state
+    showRatings(!items.google, 'blur-ratings');
 
     // mark search items based on their source identifier
     for (let i = urls.length - 1; i >= 0; i--) {
@@ -49,4 +52,6 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     for (let source in sourceIdentifiers) {
         showRatings(!msg[source], source + '-hide-ratings');
     }
+
+    showRatings(!msg.google, 'blur-ratings');
 });

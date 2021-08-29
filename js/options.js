@@ -6,7 +6,8 @@
         'imdb':       false,
         'mal':        false,
         'goodreads':  false,
-        'letterboxd': false
+        'letterboxd': false,
+        'google':     false,
     };
 
     // Checks if chrome storage is defined
