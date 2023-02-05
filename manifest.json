@@ -13,7 +13,9 @@
         "64":  "images/icon64.png",
         "128": "images/icon128.png"
     },
-    "options_page": "options.html",
+    "options_ui": {
+        "page": "options.html"
+    },
     "content_scripts": [
         {
             "matches": [
