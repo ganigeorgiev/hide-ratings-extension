@@ -1,8 +1,6 @@
 /**
  * ===================================================================
- * JS file that is intented to be used only by Google search page.
- *
- * @author Gani Georgiev <gani.georgiev@gmail.com>
+ * JS file that is intented to be used only in the Google search page.
  * ===================================================================
  */
 
@@ -13,14 +11,13 @@ var sourceIdentifiers = {
     'letterboxd': 'letterboxd.com',
 };
 
-// Load initial ratings visibility state from chrome.storage
-chrome.storage.sync.get(Object.keys(sourceIdentifiers).concat('google'), function (items) {
-    var urls      = document.querySelectorAll('#search .g h3 ~ div cite');
-    var totalUrls = urls.length;
-    var parent    = null;
+// Load initial ratings visibility state from browser.storage
+browser.storage.sync.get(Object.keys(sourceIdentifiers).concat('google'), function (items) {
+    const urls = document.querySelectorAll('#search .g h3 ~ div cite');
+    let parent = null;
 
     // check global search page ratings blur state
-    showRatings(!items.google, 'blur-ratings');
+    toggleDocumentClass(items.google);
 
     // mark search items based on their source identifier
     for (let i = urls.length - 1; i >= 0; i--) {
@@ -48,10 +45,12 @@ chrome.storage.sync.get(Object.keys(sourceIdentifiers).concat('google'), functio
 });
 
 // Listen for changes
-chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
+browser.storage.onChanged.addListener((changes, namespace) => {
     for (let source in sourceIdentifiers) {
-        showRatings(!msg[source], source + '-hide-ratings');
+        toggleDocumentClass(!changes[source]?.newValue, source + '-hide-ratings');
     }
 
-    showRatings(!msg.google, 'blur-ratings');
+    if (changes?.google) {
+        toggleDocumentClass(changes.google.newValue);
+    }
 });

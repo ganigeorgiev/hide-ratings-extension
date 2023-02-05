@@ -1,9 +1,9 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Hide ratings (IMDB,Goodreads,MyAnimeList,...)",
-    "description": "Protect you from other people influence by hiding the rating bars from IMDB, Goodreads, MyAnimeList and Letterboxd.",
-    "version": "1.8.3",
-    "browser_action": {
+    "description": "Hides the rating bars from IMDB, Goodreads, MyAnimeList and Letterboxd.",
+    "version": "2.0.0",
+    "action": {
         "default_icon": "images/icon64.png",
         "default_popup": "options.html"
     },
@@ -233,7 +233,7 @@
     "permissions": [
         "storage"
     ],
-    "optional_permissions": [
+    "optional_host_permissions": [
         "*://www.google.com/search*",
         "*://www.google.ad/search*",
         "*://www.google.ae/search*",

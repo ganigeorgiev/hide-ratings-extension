@@ -18,6 +18,7 @@ html:not(.show-ratings) [onclick*="#score"]:after {
     background: #fff;
 }
 html:not(.show-ratings) [itemprop="aggregateRating"],
+html:not(.show-ratings) .bottom-navi .icon-reaction,
 html:not(.show-ratings) .mal-ratings-wrapper,
 html:not(.show-ratings) #myinfo_score,
 html:not(.show-ratings) td .js-top-ranking-score-col,
@@ -26,4 +27,12 @@ html:not(.show-ratings) .anime-detail-header-stats .stats-block:before,
 html:not(.show-ratings) .anime-detail-header-stats .stats-block .di-ib.ml12.pl20.pt8,
 html:not(.show-ratings) .anime-detail-header-stats .stats-block .score {
     display: none !important;
+}
+
+html:not(.show-ratings) .ranking-unit .info {
+    filter: blur(5px);
+    transition: filter 0.2s;
+}
+.ranking-unit .info:hover {
+    filter: blur(0) !important;
 }

@@ -11,32 +11,22 @@ g-review-stars,
     visibility: visible;
 }
 
-.blur-ratings g-review-stars,
-.blur-ratings g-review-stars ~ span,
-.blur-ratings [data-attrid="kc:/ugc:user_reviews"],
-.blur-ratings [data-attrid="kc:/film/film:reviews"],
-.blur-ratings [data-attrid="kc:/book/book:reviews"],
-.blur-ratings [data-attrid="kc:/tv/tv_program:reviews"] {
+html:not(.show-ratings) g-review-stars,
+html:not(.show-ratings) g-review-stars ~ span,
+html:not(.show-ratings) .a19vA,
+html:not(.show-ratings) [data-attrid="kc:/ugc:user_reviews"],
+html:not(.show-ratings) [data-attrid="kc:/film/film:reviews"],
+html:not(.show-ratings) [data-attrid="kc:/book/book:reviews"],
+html:not(.show-ratings) [data-attrid="kc:/tv/tv_program:reviews"] {
     filter: blur(15px);
     transition: filter 0.2s;
 }
-.blur-ratings g-review-stars:hover,
-.blur-ratings g-review-stars:hover ~ span,
-.blur-ratings [data-attrid="kc:/ugc:user_reviews"]:hover,
-.blur-ratings [data-attrid="kc:/film/film:reviews"]:hover,
-.blur-ratings [data-attrid="kc:/book/book:reviews"]:hover,
-.blur-ratings [data-attrid="kc:/tv/tv_program:reviews"]:hover {
-    filter: blur(0);
-}
-
-.imdb-hide-ratings .imdb-search-item .dhIWPd,
-.mal-hide-ratings .mal-search-item .dhIWPd,
-.letterboxd-hide-ratings .letterboxd-search-item .dhIWPd,
-.goodreads-hide-ratings .goodreads-search-item .dhIWPd,
-.imdb-hide-ratings .imdb-search-item .f.slp,
-.mal-hide-ratings .mal-search-item .f.slp,
-.letterboxd-hide-ratings .letterboxd-search-item .f.slp,
-.goodreads-hide-ratings .goodreads-search-item .f.slp,
-.goodreads-hide-ratings .xpdopen .LoQAYe {
-    display: none !important;
+g-review-stars:hover,
+g-review-stars:hover ~ span,
+html:not(.show-ratings) .a19vA:hover,
+[data-attrid="kc:/ugc:user_reviews"]:hover,
+[data-attrid="kc:/film/film:reviews"]:hover,
+[data-attrid="kc:/book/book:reviews"]:hover,
+[data-attrid="kc:/tv/tv_program:reviews"]:hover {
+    filter: blur(0) !important;
 }

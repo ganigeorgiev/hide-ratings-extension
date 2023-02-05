@@ -8,6 +8,7 @@ html:not(.show-ratings) .communityRating,
 html:not(.show-ratings) .AverageRating,
 html:not(.show-ratings) .AggregateRating,
 html:not(.show-ratings) .RatingStatistics,
+html:not(.show-ratings) .ReviewsSectionStatistics,
 html:not(.show-ratings) .BookStatistics__ratingStatistics,
 html:not(.show-ratings) .BookStatistics__histogram,
 html:not(.show-ratings) .RatingStars,
@@ -16,10 +17,6 @@ html:not(.show-ratings) .SocialSignalsSection + .Divider,
 html:not(.show-ratings) [itemprop="aggregateRating"],
 html:not(.show-ratings) .avg_rating,
 html:not(.show-ratings) th.rating,
-html:not(.show-ratings) td.rating,
 html:not(.show-ratings) .minirating {
-    /* enable if `display: none` breaks the layout */
-    /*visibility: hidden !important;*/
-
     display: none !important;
 }

@@ -1,8 +1,10 @@
 ;(function () {
-    var statusVisibilityTimeoutId = null;
+    var browser = browser || chrome;
+
+    let statusVisibilityTimeoutId = null;
 
     // List with available rating sources and their default toggle values
-    var sourcesDefault = {
+    let sourcesDefault = {
         'imdb':       false,
         'mal':        false,
         'goodreads':  false,
@@ -10,36 +12,21 @@
         'google':     false,
     };
 
-    // Checks if chrome storage is defined
-    function hasChromeStorage() {
-        return (
-            typeof chrome !== 'undefined' &&
-            typeof chrome.storage !== 'undefined' &&
-            typeof chrome.storage.sync !== 'undefined'
-        );
-    }
-
-    // Saves toggle values in chrome.storage
+    // Saves toggle values in browser.storage
     function saveToggleValues() {
-        if (!hasChromeStorage()) {
-            console.warn('Chrome storage is not available.')
+        if (!browser?.storage?.sync) {
+            console.warn('Browser storage is not available.');
             return;
         }
 
-        var data = {};
+        const data = {};
         for (let name in sourcesDefault) {
             data[name] = !document.getElementById(name + '_toggle').classList.contains('active');
         }
 
-        chrome.storage.sync.set(data, function () {
-            chrome.tabs.query({}, function (tabs) {
-                for (let tab of tabs) {
-                    chrome.tabs.sendMessage(tab.id, data);
-                }
-            });
-
+        browser.storage.sync.set(data, function () {
             // show status box
-            var statusBox = document.getElementById('status_box');
+            const statusBox = document.getElementById('status_box');
             statusBox.classList.remove('hidden');
             if (statusVisibilityTimeoutId) {
                 clearTimeout(statusVisibilityTimeoutId);
@@ -50,17 +37,17 @@
         });
     }
 
-    // Restores toggle values from chrome.storage
+    // Restores toggle values from browser.storage
     function restoreToggleValues() {
-        var keys = Object.keys(sourcesDefault);
-
-        if (!hasChromeStorage()) {
-            console.warn('Chrome storage is not available.')
+        if (!browser?.storage?.sync) {
+            console.warn('Browser storage is not available.')
             return;
         }
 
-        chrome.storage.sync.get(keys, function (items) {
-            var values = Object.assign({}, sourcesDefault, items);
+        const keys = Object.keys(sourcesDefault);
+
+        browser.storage.sync.get(keys, function (items) {
+            const values = Object.assign({}, sourcesDefault, items);
 
             for (let key of keys) {
                 document.getElementById(key + '_toggle').classList.toggle('active', !values[key]);
@@ -71,7 +58,6 @@
     // Switch on/off single toggle item
     function toggle(el) {
         el.classList.toggle('active');
-
         saveToggleValues();
     }
 
@@ -79,7 +65,7 @@
         document.getElementById(name + '_toggle').addEventListener('click', function (e) {
             e.preventDefault();
             toggle(this);
-         }, false);
+        }, false);
     }
 
     document.addEventListener('DOMContentLoaded', restoreToggleValues);

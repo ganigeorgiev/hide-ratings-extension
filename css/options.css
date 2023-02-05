@@ -123,7 +123,7 @@ small {
     border-radius: 26px;
     cursor: pointer;
     user-select: none;
-    transition: all 0.3s;
+    transition: all 0.2s;
     border: 1px solid #ededed;
     box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0);
 }
@@ -137,7 +137,7 @@ small {
     height: 22px;
     background: #ccc;
     border-radius: 50%;
-    transition: all 0.3s;
+    transition: all 0.2s;
 }
 /* hover state */
 .toggle:hover {
