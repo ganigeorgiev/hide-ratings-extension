@@ -10,6 +10,8 @@
         'goodreads':  false,
         'letterboxd': false,
         'google':     false,
+        'grouvee':    false,
+        'backloggd':  false,
     };
 
     // Saves toggle values in browser.storage

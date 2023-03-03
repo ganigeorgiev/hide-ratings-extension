@@ -1,0 +1,6 @@
+html:not(.show-ratings) .star-rating-below,
+html:not(.show-ratings) .side-section:has(#score),
+html:not(.show-ratings) .star-ratings-static,
+html:not(.show-ratings) .avg-rating {
+    display: none !important;
+}

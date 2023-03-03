@@ -1,0 +1,23 @@
+html:not(.show-ratings) .stars-1_0,
+html:not(.show-ratings) .stars-1_5,
+html:not(.show-ratings) .stars-2_0,
+html:not(.show-ratings) .stars-2_5,
+html:not(.show-ratings) .stars-3_0,
+html:not(.show-ratings) .stars-3_5,
+html:not(.show-ratings) .stars-4_0,
+html:not(.show-ratings) .stars-4_5,
+html:not(.show-ratings) .stars-5_0,
+html:not(.show-ratings) .ratingValue,
+html:not(.show-ratings) .reviewCount,
+html:not(.show-ratings) div[itemprop="aggregateRating"],
+html:not(.show-ratings) div.mr-4 > div.mb-2,
+html:not(.show-ratings) .rating,
+html:not(.show-ratings) .date,
+html:not(.show-ratings) .stats-box:has(.score-breakdown),
+html:not(.show-ratings) table tr td:nth-child(3),
+html:not(.show-ratings) table tr th:nth-child(3),
+html:not(.show-ratings) table tr td:nth-child(4),
+html:not(.show-ratings) table tr th:nth-child(4),
+html:not(.show-ratings) .game-data div:nth-child(2) {
+    display: none !important;
+}

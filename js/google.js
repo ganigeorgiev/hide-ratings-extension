@@ -9,6 +9,8 @@ var sourceIdentifiers = {
     'mal':        'myanimelist.net',
     'goodreads':  'goodreads.com',
     'letterboxd': 'letterboxd.com',
+    'grouvee':    'grouvee.com',
+    'backloggd':  'backloggd.com'
 };
 
 // Load initial ratings visibility state from browser.storage
