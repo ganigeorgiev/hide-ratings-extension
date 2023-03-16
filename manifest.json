@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Hide ratings (IMDB,Goodreads,MyAnimeList,...)",
     "description": "Hides the rating bars from IMDB, Goodreads, MyAnimeList and Letterboxd.",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "action": {
         "default_icon": "images/icon64.png",
         "default_popup": "options.html"
