@@ -7,24 +7,24 @@
 var browser = browser || chrome;
 
 function initVendor(vendor) {
-    browser.storage.sync.get([vendor], function (items) {
-        toggleDocumentClass(items[vendor]);
-    });
+  browser.storage.sync.get([vendor], function (items) {
+    toggleDocumentClass(items[vendor]);
+  });
 
-    // Listen for changes
-    browser.storage.onChanged.addListener((changes, namespace) => {
-        if (changes?.[vendor]) {
-            toggleDocumentClass(changes[vendor].newValue);
-        }
-    });
+  // Listen for changes
+  browser.storage.onChanged.addListener((changes, namespace) => {
+    if (changes?.[vendor]) {
+      toggleDocumentClass(changes[vendor].newValue);
+    }
+  });
 }
 
-function toggleDocumentClass(value, className) {
-    className = className || 'show-ratings';
+function toggleDocumentClass(value, className = "show-ratings") {
+  const htmlElement = document.querySelector("html");
 
-    if (value) {
-        document.querySelector('html').classList.add(className);
-    } else {
-        document.querySelector('html').classList.remove(className);
-    }
+  if (value) {
+    htmlElement.classList.add(className);
+  } else {
+    htmlElement.classList.remove(className);
+  }
 }
