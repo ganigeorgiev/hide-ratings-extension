@@ -23,8 +23,8 @@ function toggleDocumentClass(value, className) {
     className = className || 'show-ratings';
 
     if (value) {
-        document.querySelector('html').classList.add(className);
+        document.documentElement?.classList?.add(className);
     } else {
-        document.querySelector('html').classList.remove(className);
+        document.documentElement?.classList?.remove(className);
     }
 }
