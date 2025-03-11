@@ -1,12 +1,14 @@
 g-review-stars,
 .f.slp,
 .yQ8hqd.ksSzJd.w6Utff,
+.QU4hqb,
 .dhIWPd {
     visibility: hidden;
 }
 .settings-loaded g-review-stars,
 .settings-loaded .f.slp,
 .settings-loaded .yQ8hqd.ksSzJd.w6Utff,
+.settings-loaded .QU4hqb,
 .settings-loaded .dhIWPd {
     visibility: visible;
 }
@@ -15,6 +17,7 @@ html:not(.show-ratings) g-review-stars,
 html:not(.show-ratings) g-review-stars ~ span,
 html:not(.show-ratings) .a19vA,
 html:not(.show-ratings) .uo4vr,
+html:not(.show-ratings) .QU4hqb:has(.gTPtFb),
 html:not(.show-ratings) [data-attrid="kc:/ugc:user_reviews"],
 html:not(.show-ratings) [data-attrid="kc:/film/film:reviews"],
 html:not(.show-ratings) [data-attrid="kc:/book/book:reviews"],
@@ -26,6 +29,7 @@ g-review-stars:hover,
 g-review-stars:hover ~ span,
 html:not(.show-ratings) .a19vA:hover,
 html:not(.show-ratings) .uo4vr:hover,
+html:not(.show-ratings) .QU4hqb:has(.gTPtFb):hover,
 [data-attrid="kc:/ugc:user_reviews"]:hover,
 [data-attrid="kc:/film/film:reviews"]:hover,
 [data-attrid="kc:/book/book:reviews"]:hover,
