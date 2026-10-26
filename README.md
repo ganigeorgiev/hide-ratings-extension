@@ -1,3 +1,5 @@
+⚠️ The project has moved to https://ganigeorgiev.com/hide-ratings-extension.
+
 Hide ratings
 ======================================================================
 
